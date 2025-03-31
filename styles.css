@@ -1,0 +1,262 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Navigation Bar */
+header {
+    background: #6f4e37;
+    padding: 15px 0;
+}
+
+nav ul {
+    display: flex; /* This Flexbox layout is used for the navigation bar and fulfills the requirement of using Flexbox. */
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffddaa;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/hot-coffe.jpg') no-repeat center center/cover;
+    color: rgb(255, 254, 254);
+    text-align: center;
+    padding: 80px 20px;
+    animation: fadeIn 1.5s ease-in; /* This animation satisfies the @keyframes requirement. */
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+.intro, .sidebar {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: textFade 1s ease-in;
+    transition: transform 0.3s ease;
+}
+
+.intro h2, .sidebar h2 {
+    transition: transform 0.3s ease;
+}
+
+.intro p, .sidebar p {
+    transition: transform 0.3s ease;
+}
+
+.intro:hover, .sidebar:hover {
+    transform: scale(1.05);
+}
+
+@keyframes textFade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.intro {
+    flex: 2;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+/* Services Grid */
+.services-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.services-grid {
+    display: grid; /* This layout fulfills the requirement of using CSS Grid. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card img {
+    max-width: 100%; /* This ensures images are responsive, satisfying the responsive image requirement. */
+    border-radius: 10px;
+}
+
+.service-card h3 {
+    margin: 15px 0 10px;
+}
+
+.service-card p {
+    font-size: 16px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+} /* This hover effect meets the :hover or :focus transition requirement. */
+
+/* Today's Special Section */
+.todays-special-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.special-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.special-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.special-card h3 {
+    margin: 15px 0 10px;
+}
+
+.special-card p {
+    font-size: 16px;
+}
+
+.special-card:hover {
+    transform: scale(1.05); /* Enlarges slightly on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Form */
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #6f4e37;
+    outline: none;
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #6f4e37;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    background: #5a3d2b;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .services-grid, .todays-special-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero {
+        padding: 60px 10px;
+    }
+    .hero h1 {
+        font-size: 30px;
+    }
+}
